@@ -1,0 +1,200 @@
+{
+  "target": "https://ideav.ru/sravnenie-s-bitrix-amocrm.html",
+  "counts": {
+    "stop": 2,
+    "fix": 12,
+    "note": 3
+  },
+  "findings": [
+    {
+      "level": "stop",
+      "check": "кнопка-без-имени",
+      "message": "1 кнопок или ссылок без доступного имени.",
+      "detail": "button.text-slate-500",
+      "viewports": [
+        "mobile-320",
+        "mobile-360",
+        "mobile-412",
+        "tablet-768",
+        "laptop-1024",
+        "desktop-1440",
+        "wide-1920"
+      ]
+    },
+    {
+      "level": "stop",
+      "check": "фокус-не-виден",
+      "message": "Есть элементы без видимого фокуса клавиатуры.",
+      "detail": "6 из 30: a.block, a.block, a.block, a.block",
+      "viewports": [
+        "tablet-768",
+        "laptop-1024",
+        "desktop-1440",
+        "wide-1920"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "мелкая-цель-касания",
+      "message": "Управляющие элементы меньше 44×44px на телефоне.",
+      "detail": "28 шт.: a.flex, button.p-2, button.text-slate-500, a.transition-colors",
+      "viewports": [
+        "mobile-320",
+        "mobile-360",
+        "mobile-412"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "анимация-раскладки",
+      "message": "Анимируются свойства, пересчитывающие раскладку — кадры проседают. Двигать только transform и opacity.",
+      "detail": "5 шт.: button.p-2: all · a.inline-flex: all · a.group: all",
+      "viewports": [
+        "mobile-320",
+        "mobile-360",
+        "mobile-412",
+        "tablet-768",
+        "laptop-1024",
+        "desktop-1440",
+        "wide-1920"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "нет-курсора-на-кликабельном",
+      "message": "У кликабельных элементов курсор не «рука».",
+      "detail": "2 шт.: button.p-2, button.text-slate-500",
+      "viewports": [
+        "mobile-320",
+        "mobile-360",
+        "mobile-412",
+        "tablet-768",
+        "laptop-1024",
+        "desktop-1440",
+        "wide-1920"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "мелкий-текст-на-телефоне",
+      "message": "Связный текст мельче 14px на телефоне.",
+      "detail": "div.text-slate-400 12px",
+      "viewports": [
+        "mobile-320",
+        "mobile-360",
+        "mobile-412"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "тесный-интерлиньяж",
+      "message": "Интерлиньяж связного текста ниже 1.35 — строки слипаются.",
+      "detail": "div.text-slate-400 1.33",
+      "viewports": [
+        "mobile-320",
+        "mobile-360",
+        "mobile-412",
+        "tablet-768",
+        "laptop-1024",
+        "desktop-1440",
+        "wide-1920"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "низкий-контраст",
+      "message": "Текст ниже нормы WCAG AA (приблизительно).",
+      "detail": "3 из 105 узлов; худшие: a.inline-flex 1:1 (нужно 4.5) «Начать с Интеграмом» · button.shrink-0 1:1 (нужно 4.5) «Принять» · span.text-2xl 2.75:1 (нужно 3) «Битрикс24»",
+      "viewports": [
+        "mobile-320",
+        "mobile-360",
+        "mobile-412",
+        "tablet-768",
+        "laptop-1024",
+        "desktop-1440",
+        "wide-1920"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "содержимое-вылезло",
+      "message": "header.fixed: содержимое шире контейнера на 311px.",
+      "viewports": [
+        "tablet-768"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "содержимое-вылезло",
+      "message": "div.max-w-7xl: содержимое шире контейнера на 311px.",
+      "viewports": [
+        "tablet-768"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "содержимое-вылезло",
+      "message": "div.flex: содержимое шире контейнера на 335px.",
+      "viewports": [
+        "tablet-768"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "содержимое-вылезло",
+      "message": "header.fixed: содержимое шире контейнера на 63px.",
+      "viewports": [
+        "laptop-1024"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "содержимое-вылезло",
+      "message": "div.max-w-7xl: содержимое шире контейнера на 63px.",
+      "viewports": [
+        "laptop-1024"
+      ]
+    },
+    {
+      "level": "fix",
+      "check": "содержимое-вылезло",
+      "message": "div.flex: содержимое шире контейнера на 95px.",
+      "viewports": [
+        "laptop-1024"
+      ]
+    },
+    {
+      "level": "note",
+      "check": "длинная-строка",
+      "message": "Строка длиннее 95 знаков — читать тяжело, норма 65–75.",
+      "detail": "p.text-sm ~97 знаков, p.text-sm ~97 знаков, p.text-sm ~97 знаков, p.text-sm ~97 знаков",
+      "viewports": [
+        "tablet-768",
+        "laptop-1024",
+        "desktop-1440",
+        "wide-1920"
+      ]
+    },
+    {
+      "level": "note",
+      "check": "тёмная-тема-не-меняет",
+      "message": "В тёмной теме фон и цвет текста те же, что в светлой.",
+      "detail": "body остаётся oklch(1 0 0), текст oklch(0.09 0.016 285.75) — либо тема одна намеренно, либо правило prefers-color-scheme не срабатывает. Решает человек.",
+      "viewports": [
+        "dark-360",
+        "dark-1440"
+      ]
+    },
+    {
+      "level": "note",
+      "check": "клик-не-нашёл-целей",
+      "message": "Автоподбор целей ничего не нашёл — на экране нет раскрывающихся элементов.",
+      "detail": "Если состояния всё же есть, указать их вручную: --click <селектор>.",
+      "viewports": [
+        "клик"
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "external": []
+}

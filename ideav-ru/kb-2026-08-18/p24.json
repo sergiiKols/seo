@@ -1,0 +1,89 @@
+{
+  "url": "https://ideav.ru/knowledge-base/24-pure-business-design.html",
+  "http": 200,
+  "raw": {
+    "bytes": 18254,
+    "words": 504,
+    "h1": [
+      "Pure Business Design: приложение по описанию задачи, без блоков и кубиков"
+    ],
+    "h2count": 4,
+    "hasForm": false,
+    "hasFileInput": false,
+    "hasTextarea": false,
+    "ogImage": "https://ideav.ru/og/24-pure-business-design.png",
+    "title": "Pure Business Design — приложение по описанию задачи",
+    "jsBundles": [
+      "index-Dx4b-LKo.js",
+      "react-vendor-D57BBaBp.js",
+      "motion-CWae_IBN.js"
+    ],
+    "articleDates": [
+      {
+        "type": "TechArticle",
+        "datePublished": null,
+        "dateModified": "2026-08-18"
+      }
+    ],
+    "linksToAgentPlatforms": 0,
+    "missingNbsp": 50,
+    "phrases": {}
+  },
+  "rendered": {
+    "w1440": {
+      "h1": [
+        "Pure Business Design: приложение по описанию задачи, без блоков и кубиков"
+      ],
+      "h2count": 8,
+      "words": 1339,
+      "hasForm": false,
+      "hasFileInput": false,
+      "hasTextarea": false,
+      "headerScrollWidth": 1440,
+      "headerClientWidth": 1440,
+      "docScrollWidth": 1440,
+      "docClientWidth": 1440,
+      "slateButton": {
+        "text": "Ещё",
+        "aria": null,
+        "title": null
+      },
+      "namelessButtons": 0,
+      "namelessButtonsSample": [],
+      "navLinks": [
+        " → /",
+        "Технология → /#technology",
+        "Как работаем → /#process",
+        "Примеры → /#cases",
+        "Цены → /#pricing",
+        "Больше CRM → /sravnenie-s-bitrix-amocrm.html",
+        "База знаний → /knowledge-base.html",
+        "Блог → https://ideav.ru/blog/",
+        "Информационная система → /informatsionnaya-sistema.html",
+        "Платформы с ИИ-агентами → /agent-platforms.html",
+        "Решения вместо Excel → /resheniya.html",
+        "Конструктор вместо Excel → /konstruktor-prilozhenij.html",
+        "Excel → приложение → /excel-to-app.html",
+        "Сопоставление каталогов → /catalog-matching.html",
+        "Предпосылки no-code конструктора → https://ideav.ru/blog/posts/predposylki-no-code-konstruktora-integram/",
+        "Начать → https://ideav.ru/start.html",
+        "ПредыдущаяБезопасность и отказоустойчивость → /knowledge-base/23-security-fault-tolerance.html"
+      ],
+      "linksToAgentPlatforms": 1,
+      "consoleErrors": [],
+      "bodyTextLen": 9855
+    },
+    "w768": {
+      "headerScrollWidth": 768,
+      "headerClientWidth": 768,
+      "docScrollWidth": 768,
+      "docClientWidth": 768,
+      "overflowPx": 0,
+      "h1": [
+        "Pure Business Design: приложение по описанию задачи, без блоков и кубиков"
+      ]
+    },
+    "phrases": {},
+    "h1RawVsRendered": "СОВПАДАЕТ"
+  }
+}

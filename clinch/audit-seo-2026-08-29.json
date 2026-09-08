@@ -1,0 +1,236 @@
+{
+  "target": "https://clinch.by",
+  "timestamp": "2026-08-29T12:35:33.753006",
+  "http": {
+    "status": 200,
+    "ok": true,
+    "headers": {
+      "content_type": "",
+      "content_length": "",
+      "server": "",
+      "x_robots_tag": ""
+    }
+  },
+  "ssl": {
+    "is_https": true,
+    "redirects_to_https": false
+  },
+  "robots": {
+    "exists": true,
+    "has_sitemap": true,
+    "has_crawl_delay": true,
+    "blocks_all": true,
+    "content_preview": "User-agent: *\nDisallow: /my/\nDisallow: /thumb/*/d/fgs16_*\nDisallow: /d/fgs16_*\nDisallow: /thumb/*/d/tpl25_*\nDisallow: /d/tpl25_*\nDisallow: /thumb/*/d/stp25_*\nDisallow: /d/stp25_*\nSitemap: https://clinch.by/sitemap.6756647.xml.gz\nSitemap: https://clinch.by/x/sitemap.xml.gz\n\nUser-Agent: Yandex\nAllow: /\nDisallow: /my/\nDisallow: /thumb/*/d/fgs16_*\nDisallow: /d/fgs16_*\nDisallow: /thumb/*/d/tpl25_*\nDisallow: /d/tpl25_*\nDisallow: /thumb/*/d/stp25_*\nDisallow: /d/stp25_*\nHost: https://clinch.by\nSitemap: "
+  },
+  "sitemap": {
+    "exists": true,
+    "url_count": 149,
+    "sitemap_count": 0,
+    "has_lastmod": true,
+    "has_priority": true,
+    "has_changefreq": true
+  },
+  "seo": {
+    "title": "Clinch – интернет-магазин товаров для бокса и единоборств в Гомеле",
+    "meta_description": "Интернет-магазин Clinch в Гомеле – всё для бокса и единоборств: перчатки, бинты, шлемы, обувь, снаряжение и форма. Только оригинальная продукция Clinch.",
+    "meta_robots": "",
+    "meta_viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+    "canonical": "",
+    "hreflangs": [],
+    "og_tags": {},
+    "twitter_tags": {},
+    "images": [
+      {
+        "src": "/thumb/2/SHYu-G3fleOOmJXgKsb_Qw/300c80/d/clinchru.png",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/KZBpZgzuz-3PquoQVfWmTw/200r160/d/binty_bokserskie_clinch_boxing_hand_wrap_undefeated_svetlo-sinie_c1240.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/Rf5jPQUHLWSX6siDpi4ELQ/200r160/d/forma_bokserskaya_clinch_fight_bfb_krasno-belaya-1_c1119_045881.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/cl6qQvqFPluhZJ8zGUAB2g/200r160/d/perchatki_bokserskie_clinch_olimp_krasnye_c1111.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/p-m4apUah7idiEaK_-DxDw/200r160/d/lapy_klinch.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/r8FyD7ozSpeiN0FV9KPm0Q/200r160/d/grusha_clinch.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/zm5HXbNSWZvo06gzQgeIGQ/200r160/d/kapa_odnochelyustnaya_clinch_competition_single_layer_mouthguard_chernaya_c1511.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/Moov3mhWk3vH_DSkIZppew/200r160/d/bokserki_clinch_olimp_20_sine-krasnye_c1415_2.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/QjPKsMoDPZVnr34dKayx4Q/200r160/d/zashchita_paha_clinch_groin_guard_pro_cherno-bronzovaya_c1526.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/Z2HaL76x4ophjBPBZ_2j0w/200r160/d/shlem_bfb_krasnyj.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/dhbDa07ZxG6LJBCWAYk57w/200r160/d/perchatki_snaryadnye_clinch_prime_20_cherno-bronzovye_c1652.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/6d1aBEvvqmmSwjpmayg4yw/200r160/d/futbolka_clinch.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/F-hNHk_Egr-VkUXC_6bH9g/200r160/d/skakalka_skorostnaya_clinch_speed_rope_undefeated_fioletovaya_c1218_2.jpg",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/IThA_RPlJdKsAjLRiaEHLw/330r330/d/forma_bokserskaya_clinch_competition_fbr_krasnaya-1_c1115_718165.jpg",
+        "alt": "Форма боксерская Clinch Competition БФБ красная C1115",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/dNjaq3FLsDCfoKR9brHaJA/330r330/d/forma_bokserskaya_clinch_competition_fbr_krasnaya_c1115.jpg",
+        "alt": "Форма боксерская Clinch Competition БФБ красная C1115",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/i0AC1Guph8_-dXFHYwqAXQ/330r330/d/forma_bokserskaya_clinch_competition_fbr_sinij-1_c1115_051509.jpg",
+        "alt": "Форма боксерская Clinch Competition БФБ синяя C1115",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/_t3leeilhjP5M8NSbBYpWA/330r330/d/forma_bokserskaya_clinch_competition_fbr_sinij_c1115.jpg",
+        "alt": "Форма боксерская Clinch Competition БФБ синяя C1115",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/0GgYXc9ZQblHeFMcOyCvjQ/330r330/d/forma_bokserskaya_clinch_fight_bfb_krasno-belaya-1_c1119_045881.jpg",
+        "alt": "Форма боксерская Clinch Fight БФБ красно-белая C1119",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/pXbeBWEqA61PIpYWqWtaZQ/330r330/d/forma_bokserskaya_clinch_fight_bfb_krasno-belaya_c1119.jpg",
+        "alt": "Форма боксерская Clinch Fight БФБ красно-белая C1119",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/4Q51_I58RfDzIE-a52VaTg/330r330/d/forma_bokserskaya_clinch_fight_bfb_sinij-belaya_c1119_125093.jpg",
+        "alt": "Форма боксерская Clinch Fight БФБ сине-белая C1119",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/ss6B7XW-EEiX6iaSu2pZ2Q/330r330/d/forma_bokserskaya_clinch_fight_bfb_sinij-belaya-1_c1119.jpg",
+        "alt": "Форма боксерская Clinch Fight БФБ сине-белая C1119",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "/thumb/2/zfSC9hIcYRQApirk8Q-XuQ/140r120/d/clinchru.png",
+        "alt": "Clinch",
+        "width": "",
+        "height": ""
+      },
+      {
+        "src": "https://mc.yandex.ru/watch/101043452",
+        "alt": "",
+        "width": "",
+        "height": ""
+      }
+    ],
+    "headings": {
+      "h1": [
+        "Clinch – интернет-магазин товаров для бокса"
+      ],
+      "h2": [],
+      "h3": [],
+      "h4": [],
+      "h5": [],
+      "h6": []
+    },
+    "json_ld": []
+  },
+  "counts": {
+    "stop": 0,
+    "fix": 3,
+    "note": 4
+  },
+  "findings": [
+    {
+      "level": "fix",
+      "check": "title-длинный",
+      "message": "Title слишком длинный: 66 символов (норма 50-60)"
+    },
+    {
+      "level": "note",
+      "check": "h2-отсутствует",
+      "message": "Нет подзаголовков H2 — структура контента не обозначена"
+    },
+    {
+      "level": "fix",
+      "check": "canonical-отсутствует",
+      "message": "Canonical URL не указан"
+    },
+    {
+      "level": "fix",
+      "check": "img-без-alt",
+      "message": "14 изображений без alt-текста"
+    },
+    {
+      "level": "note",
+      "check": "img-без-размеров",
+      "message": "23 изображений без width/height — возможен сдвиг при загрузке"
+    },
+    {
+      "level": "note",
+      "check": "og-неполный",
+      "message": "Отсутствуют OG теги: og:title, og:description, og:image, og:url"
+    },
+    {
+      "level": "note",
+      "check": "json-ld-отсутствует",
+      "message": "Нет структурированных данных (JSON-LD)"
+    }
+  ]
+}

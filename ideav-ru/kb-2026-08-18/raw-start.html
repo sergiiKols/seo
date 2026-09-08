@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title> 
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cabinet.css">
+    <link rel="stylesheet" href="assets/vendor/primeicons/primeicons.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108758829', 'ym');
+
+        ym(108758829, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/108758829" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+		<a target="ideav" href="https://ideav.ru/">
+	        <div class="navbar-left">
+	            <img src="images/logo.png" alt="Логотип" class="logo">
+	        </div>
+		</a>
+        <div class="navbar-right">
+            <button id="theme-toggle" class="theme-toggle">🌙 <span>Темная</span></button>
+
+            <!-- Shown when no valid idb_* cookies found -->
+            <button id="login-btn" class="btn-primary-nav" style="display:none;">Войти</button>
+
+            <!-- Shown when authenticated: single db or idb_my -->
+            <div id="db-btn-wrapper" style="display:none;" class="db-btn-wrapper">
+                <button id="db-btn" class="btn-primary-nav" onclick="window._app && window._app.navigateToDb()"></button>
+                <!-- Dropdown arrow, shown only when multiple dbs exist -->
+                <button id="db-dropdown-toggle" class="db-dropdown-toggle" style="display:none;" aria-label="Выбрать базу данных">&#9660;</button>
+                <div id="db-dropdown" class="db-dropdown" style="display:none;"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome section: shown by default -->
+    <main class="main-content" id="welcome-section">
+        <style>
+/* Welcome Page Styles */
+.welcome-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-header h1 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.welcome-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.welcome-topics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.welcome-topic {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.welcome-topic summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    list-style: none;
+    user-select: none;
+    transition: background 0.15s;
+}
+
+.welcome-topic summary::-webkit-details-marker {
+    display: none;
+}
+
+.welcome-topic summary::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    border: 2px solid var(--text-secondary);
+    border-top: none;
+    border-left: none;
+    transform: rotate(-45deg);
+    transition: transform 0.2s;
+    margin-left: auto;
+    margin-top: -2px;
+}
+
+.welcome-topic[open] summary::after {
+    transform: rotate(45deg);
+    margin-top: 2px;
+}
+
+.welcome-topic summary:hover {
+    background: var(--bg-secondary);
+}
+
+.welcome-topic summary .topic-icon {
+    font-size: 1.1rem;
+    color: var(--button-primary);
+    min-width: 20px;
+    text-align: center;
+}
+
+.welcome-topic-content {
+    padding: 0 16px 16px 48px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.welcome-topic-content p {
+    margin-bottom: 8px;
+}
+
+.welcome-topic-content ol,
+.welcome-topic-content ul {
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.welcome-topic-content li {
+    margin-bottom: 4px;
+}
+
+.welcome-topic-content strong {
+    color: var(--text-primary);
+}
+
+.welcome-topic-content code {
+    background: var(--bg-secondary);
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+}
+
+.welcome-topic-content .tip {
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--button-primary);
+    padding: 8px 12px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 8px 0;
+    font-size: 0.85rem;
+}
+
+.topic-links {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.topic-links span {
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.topic-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-right: 12px;
+    white-space: nowrap;
+}
+
+.topic-links a:hover {
+    text-decoration: underline;
+}
+
+.pricing-section {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+.pricing-section h3 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pricing-intro {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.pricing-cards {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.pricing-card {
+    flex: 1 1 180px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+}
+
+.pricing-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--button-primary);
+    margin-bottom: 4px;
+}
+
+.pricing-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.pricing-desc {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.pricing-note {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.pricing-table-wrap {
+    margin-top: 8px;
+}
+
+.pricing-table-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+.pricing-table th,
+.pricing-table td {
+    border: 1px solid var(--border-color);
+    padding: 6px 10px;
+    text-align: right;
+}
+
+.pricing-table th:first-child,
+.pricing-table td:first-child {
+    text-align: center;
+}
+
+.pricing-table th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.pricing-table tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+.welcome-links {
+    margin-top: 24px;
+    padding: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.welcome-links h3 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.welcome-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.9rem;
+}
+
+.welcome-links a:hover {
+    text-decoration: underline;
+}
+
+.welcome-search {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.welcome-search input {
+    width: 100%;
+    padding: 10px 16px 10px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s;
+}
+
+.welcome-search input:focus {
+    border-color: var(--button-primary);
+}
+
+.welcome-search input::placeholder {
+    color: var(--text-secondary);
+}
+
+.welcome-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+    font-size: 1rem;
+}
+
+.welcome-search-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    padding: 2px 6px;
+    display: none;
+    line-height: 1;
+}
+
+.welcome-search-clear:hover {
+    color: var(--text-primary);
+}
+
+.welcome-topic.search-hidden {
+    display: none;
+}
+
+mark.search-highlight {
+    background: var(--button-primary);
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+.welcome-search-empty {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 24px 0;
+    font-size: 0.95rem;
+    display: none;
+}
+.database-field-group{
+    margin-top: 0.8rem;
+}
+
+.auth-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 0.8rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.auth-checkbox input {
+    margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+    .welcome-container {
+        padding: 12px;
+    }
+    .welcome-topic-content {
+        padding-left: 16px;
+    }
+}
+</style>
+
+<div class="welcome-container">
+    <div class="welcome-header">
+        <h1>Добро пожаловать в Интеграм!</h1>
+        <p>Здесь собраны возможности, которые вы получаете — нажимайте на темы и изучайте</p>
+    </div>
+
+    <div class="welcome-search">
+        <i class="pi pi-search welcome-search-icon"></i>
+        <input type="text" id="welcomeSearch" placeholder="Поиск по темам..." autocomplete="off" />
+        <button class="welcome-search-clear" id="welcomeSearchClear" aria-label="Очистить поиск">&#x2715;</button>
+    </div>
+
+    <div class="welcome-search-empty" id="welcomeSearchEmpty">Ничего не найдено</div>
+
+    <div class="welcome-topics">
+
+        <!-- 1. Начало работы -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-user topic-icon"></i>
+                Регистрация и&nbsp;начало работы
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Интеграм позволяет быстро начать работу без сложной настройки:</p>
+                <ol>
+                    <li>Регистрация доступна через Яндекс или Email — по кнопке справа вверху.</li>
+                    <li>После регистрации вам автоматически создаётся база данных — можно использовать как песочницу или сразу как полноценное приложение.</li>
+                    <li>В <a href="https://ideav.ru/my" target="my">личном кабинете</a> вы управляете настройками аккаунта и всеми своими базами.</li>
+                    <li>В вашей базе данных будут предложены обучающие подсказки по всем основным разделам вашей базы.</li>
+                </ol>
+                <div class="tip">Восстановление пароля доступно через функцию «Сбросить пароль» на странице входа.</div>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/a9ed397b13bb7a1791499996f89463de/" target="_blank"><i class="pi pi-youtube"></i> Вводный урок — что может Интеграм</a><a href="https://rutube.ru/video/c85b3e7e11dc9f96f0f091d308968126/" target="_blank"><i class="pi pi-youtube"></i> Создаём приложение за 15 минут</a><span>Документация:</span><a href="https://help.integram.io/#rec217909544" target="_blank"><i class="pi pi-book"></i> Регистрация и установка</a></div>
+            </div>
+        </details>
+
+        <!-- 2. Модель данных -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-database topic-icon"></i>
+                Создание структуры данных (таблицы и&nbsp;поля)
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Модель данных в Интеграме состоит из связанных между собой таблиц. Вы можете создать структуру любой сложности:</p>
+                <ol>
+                    <li><strong>Редактор структуры</strong> находится в меню «Структура» — там создаются и редактируются все таблицы.</li>
+                    <li>Создавайте новые таблицы (термины) — задавайте им человеческие названия и описания.</li>
+                    <li>Доступны поля разных типов: <code>SHORT</code> (короткий текст), <code>CHARS</code> (строка), <code>MEMO</code> (длинный текст), <code>DATE</code> (дата), <code>NUMBER</code> (число) и другие основные типы.</li>
+                    <li>Для выпадающих списков используйте <strong>справочные поля</strong> — они ссылаются на другую таблицу.</li>
+                    <li>Для вложенных данных (например, позиции заказа) доступны <strong>подчинённые таблицы</strong>.</li>
+                </ol>
+                <div class="tip">Справочник — это отдельная таблица для выбора значений. Подчинённая таблица — это таблица, записи которой привязаны к конкретной записи родительской таблицы.</div>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/c85b3e7e11dc9f96f0f091d308968126/" target="_blank"><i class="pi pi-youtube"></i> Создаём приложение за 15 минут</a><span>Документация:</span><a href="https://help.integram.io/#rec218265352" target="_blank"><i class="pi pi-book"></i> Модель данных</a><a href="https://help.integram.io/#rec218266831" target="_blank"><i class="pi pi-book"></i> Редактор структуры</a><span>Статья:</span><a href="https://vc.ru/dev/1269215-integram-kak-otlichit-podchinennuyu-tablicu-ot-spravochnika" target="_blank"><i class="pi pi-external-link"></i> Подчинённая таблица vs справочник</a></div>
+            </div>
+        </details>
+
+        <!-- 3. Работа с таблицами -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-table topic-icon"></i>
+                Работа с таблицами и&nbsp;записями
+            </summary>
+            <div class="welcome-topic-content">
+                <p>В Интеграме доступны все основные операции с данными:</p>
+                <ul>
+                    <li><strong>Добавление записи:</strong> кнопка добавления новой записи доступна в каждой таблице.</li>
+                    <li><strong>Редактирование:</strong> щелчок по записи открывает форму редактирования со всеми полями.</li>
+                    <li><strong>Удаление:</strong> система автоматически проверяет наличие связанных данных перед удалением.</li>
+                    <li><strong>Фильтрация:</strong> поддерживаются маски и диапазоны для поиска, операторы <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> для чисел и дат.</li>
+                    <li><strong>Поиск в списках:</strong> в выпадающих списках работает поиск по введённым символам.</li>
+                </ul>
+                <div class="tip">Доступны служебные слова, например: <code>[TODAY]</code> — текущая дата, <code>[USER]</code> — текущий пользователь и другие, которые помогут определить текущий контекст и тонко настроить поведение системы.</div>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/8b21501218c81b9afdf6c2021cd04f4d/" target="_blank"><i class="pi pi-youtube"></i> Умный отчёт для редактирования данных</a><span>Документация:</span><a href="https://help.integram.io/#rec219525382" target="_blank"><i class="pi pi-book"></i> Поиск в таблицах</a><a href="https://help.integram.io/#rec218333212" target="_blank"><i class="pi pi-book"></i> Таблицы-справочники</a></div>
+            </div>
+        </details>
+
+        <!-- 4. Отчёты и запросы -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-chart-bar topic-icon"></i>
+                Создание отчётов и&nbsp;запросов
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Конструктор запросов позволяет строить отчёты без знания SQL:</p>
+                <ol>
+                    <li><strong>Конструктор запросов</strong> доступен в главном меню — интуитивный визуальный интерфейс.</li>
+                    <li>Выбирайте любую таблицу-источник и нужные поля для отчёта.</li>
+                    <li>Настраивайте условия фильтрации, сортировку и группировку данных.</li>
+                    <li>Доступны функции агрегации: <code>COUNT</code> (количество), <code>SUM</code> (сумма), <code>AVG</code> (среднее), <code>MIN</code>, <code>MAX</code> и другие.</li>
+                    <li>Готовые отчёты экспортируются в Excel одним кликом.</li>
+                </ol>
+                <p>Расширенные возможности:</p>
+                <ul>
+                    <li><strong>Интерактивные отчёты</strong> — с гиперссылками для перехода к записям.</li>
+                    <li><strong>Редактируемые отчёты</strong> — вы можете <a href="https://rutube.ru/video/8b21501218c81b9afdf6c2021cd04f4d/" target="_blank">править записи</a> из множества связанных таблиц в одном представлении, как в гугл-таблице.</li>
+                    <li><strong>Вложенные запросы и рекурсия</strong> — для сложной аналитики и любых вычислений.</li>
+                    <li><strong>Параметры</strong> — передача параметров в отчёт через URL, служебные слова.</li>
+                    <li><strong>JSON-экспорт</strong> — для интеграции с внешними системами.</li>
+                </ul>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/8b21501218c81b9afdf6c2021cd04f4d/" target="_blank"><i class="pi pi-youtube"></i>Умный отчёт для редактирования данных</a><a href="https://rutube.ru/video/272216e94592d3afd90fc233396c0e9f/" target="_blank"><i class="pi pi-youtube"></i> Базовые возможности BI</a><span>Документация:</span><a href="https://help.integram.io/#rec219546651" target="_blank"><i class="pi pi-book"></i> Запросы (отчёты)</a><a href="https://help.integram.io/#rec220512147" target="_blank"><i class="pi pi-book"></i> Агрегация в отчётах</a><a href="https://help.integram.io/#rec220513366" target="_blank"><i class="pi pi-book"></i> Интерактивные отчёты</a><span>Статья:</span><a href="https://vc.ru/dev/1238972-intellektualnyi-otchet-dlya-redaktirovaniya-dannyh-v-tablicah" target="_blank"><i class="pi pi-external-link"></i> Умный отчёт для редактирования данных</a></div>
+            </div>
+        </details>
+
+        <!-- 5. Формы -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-file-edit topic-icon"></i>
+                Конструктор форм и&nbsp;шаблоны
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Интеграм использует систему пяти основных универсальных форм и произвольные HTML-шаблоны — вы полностью контролируете внешний вид:</p>
+                <ol>
+                    <li>Формы хранятся в папке <code>templates</code> вашей базы и редактируются в любом текстовом редакторе.</li>
+                    <li>Для вставки значений полей используются блоки данных: <code>&#123;ИмяПоля}</code>.</li>
+                    <li>Доступ к родительским данным: <code>&#123;_parent_.ИмяПоля}</code>.</li>
+                    <li>Передача параметров запроса: <code>&#123;_request_.ИмяПоля}</code>.</li>
+                    <li>Глобальные константы доступны через: <code>&#123;_global_.ИмяКонстанты}</code>.</li>
+                    <li>Доступна информация о среде выполнения PHP: [REMOTE_ADDR], [REMOTE_HOST], [HTTP_USER_AGENT], [HTTP_REFERER] и другие.</li>
+                </ol>
+                <div class="tip">Шаблоны редактируются локально и загружаются через меню «Файлы» или из Git в рамках CI/CD процессов.</div>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/db1ca2d9f407d9d1c286129217f55706/" target="_blank"><i class="pi pi-youtube"></i> Печатные формы — создание из Excel</a><a href="https://rutube.ru/video/549098cbb63fb386a1cf1958eaa6bf40/" target="_blank"><i class="pi pi-youtube"></i> Бесплатная форма заявок для сайта</a><span>Документация:</span><a href="https://help.integram.io/#rec220711628" target="_blank"><i class="pi pi-book"></i> Пользовательские HTML-формы</a><a href="https://help.integram.io/#rec220711265" target="_blank"><i class="pi pi-book"></i> Генерация веб-страниц</a><span>Статья:</span><a href="https://vc.ru/id568649/1810140-kak-redaktirovat-shablon-integrama-lokalno" target="_blank"><i class="pi pi-external-link"></i> Редактирование шаблона локально</a></div>
+            </div>
+        </details>
+
+        <!-- 6. Импорт и экспорт данных -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-upload topic-icon"></i>
+                Импорт и экспорт данных
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Интеграм поддерживает гибкий обмен данными с внешними источниками:</p>
+                <ul>
+                    <li><strong>Импорт из Excel:</strong> загружайте таблицы с заголовками, соответствующими полям в Интеграме, через меню импорта.</li>
+                    <li><strong>Формат BKI:</strong> специальный формат для обмена данными между базами Интеграма с поддержкой иерархической структуры.</li>
+                    <li><strong>Нормализация данных:</strong> при загрузке плоских таблиц из Excel данные автоматически распределяются по связанным таблицам.</li>
+                    <li><strong>Экспорт:</strong> любой отчёт выгружается в Excel или JSON.</li>
+                </ul>
+                <div class="tip">При импорте данных из Excel у вас есть все средства, чтобы правильно связать все таблицы.</div>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/27a33314960dd37c713fe0773e664a67/" target="_blank"><i class="pi pi-youtube"></i> Загрузка подчинённых таблиц из файла</a><span>Документация:</span><a href="https://help.integram.io/#rec219528044" target="_blank"><i class="pi pi-book"></i> Экспорт и импорт данных</a><span>Статья:</span><a href="https://vc.ru/dev/1046757-normalizaciya-dannyh-iz-tablic-excel-v-integrale" target="_blank"><i class="pi pi-external-link"></i> Нормализация данных из Excel</a></div>
+            </div>
+        </details>
+
+        <!-- 7. Права доступа -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-lock topic-icon"></i>
+                Настройка прав доступа
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Система ролей обеспечивает гибкое управление доступом на всех уровнях:</p>
+                <ol>
+                    <li>Создавайте <strong>роли</strong> для разных групп пользователей — с любыми наборами прав.</li>
+                    <li>Права настраиваются на уровне таблиц — каждая роль видит только нужные разделы.</li>
+                    <li>Права настраиваются на уровне полей — можно скрыть чувствительные поля в таблице или защитить их от редактирования.</li>
+                    <li>Маски ограничивают доступ по значениям — например, менеджер видит только свои записи.</li>
+                    <li>Доступен гостевой (анонимный) режим для публичных форм и отчётов.</li>
+                </ol>
+                <div class="tip">Для каждой роли ограничиваются отдельные операции: экспорт, удаление, изменение определённых полей, доступ к файлам.</div>
+                <div class="topic-links"><span>Документация:</span><a href="https://help.integram.io/#rec220708794" target="_blank"><i class="pi pi-book"></i> Управление доступом пользователей</a></div>
+            </div>
+        </details>
+
+        <!-- 8. API и интеграции -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-link topic-icon"></i>
+                API и интеграция с&nbsp;внешними сервисами
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Интеграм предоставляет API для полноценной интеграции с внешними системами:</p>
+                <ul>
+                    <li><strong>Серверный API:</strong> вызовы с суффиксом <code>JSON</code> позволяют выполнять любые операции с данными.</li>
+                    <li><strong>JSON-запросы:</strong> данные любого отчёта доступны в формате JSON для использования в других приложениях.</li>
+                    <li><strong>Авторизация:</strong> поддерживается HTTP Basic Authentication с отдельным API-пользователем.</li>
+                    <li><strong>Внешние источники:</strong> данные из внешних HTTP-сервисов подключаются через шаблоны запросов.</li>
+                    <li><strong>Power BI:</strong> отчёты Интеграма подключаются как источник данных в Power BI через JSON-экспорт отчетов.</li>
+                </ul>
+                <div class="tip">Для API-доступа создайте отдельного пользователя с паролем и назначьте ему роль с нужными правами.</div>
+                <div class="topic-links"><span>Документация:</span><a href="https://help.integram.io/#rec220713947" target="_blank"><i class="pi pi-book"></i> API Интеграма</a><a href="https://help.integram.io/#rec220707188" target="_blank"><i class="pi pi-book"></i> Внешние источники данных</a><a href="https://help.integram.io/#rec220706787" target="_blank"><i class="pi pi-book"></i> JSON-экспорт</a><span>Статья:</span><a href="https://vc.ru/id568649/1928389-integratsiya-power-bi-s-integram" target="_blank"><i class="pi pi-external-link"></i> Интеграция Power BI с Интеграм</a></div>
+            </div>
+        </details>
+
+        <!-- 9. Массовые операции -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-sync topic-icon"></i>
+                Массовые операции с&nbsp;данными
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Запросы модификации данных открывают широкие возможности для работы с большими объёмами записей:</p>
+                <ul>
+                    <li><strong>Массовое обновление:</strong> значения в нескольких записях изменяются одновременно с помощью запросов <code>UPDATE</code>.</li>
+                    <li><strong>Создание записей:</strong> записи создаются автоматически по условию с помощью запросов <code>CREATE</code>.</li>
+                    <li><strong>Удаление:</strong> массовое удаление записей по любому фильтру с помощью запросов <code>DELETE</code>.</li>
+                    <li><strong>Интеллектуальные отчёты:</strong> данные нескольких таблиц редактируются прямо в отчёте (как в Excel).</li>
+                </ul>
+                <div class="tip">Перед массовыми операциями выборку удобно проверить через обычный отчёт, который покажет, какие изменения будут внесены в данные.</div>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/8b21501218c81b9afdf6c2021cd04f4d/" target="_blank"><i class="pi pi-youtube"></i> Умный отчёт для редактирования данных</a><span>Документация:</span><a href="https://help.integram.io/#rec220520254" target="_blank"><i class="pi pi-book"></i> Запросы модификации данных</a><span>Статья:</span><a href="https://vc.ru/dev/1238972-intellektualnyi-otchet-dlya-redaktirovaniya-dannyh-v-tablicah" target="_blank"><i class="pi pi-external-link"></i> Умный отчёт для редактирования данных</a></div>
+            </div>
+        </details>
+
+        <!-- 10. Служебные функции -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-cog topic-icon"></i>
+                Служебные функции и&nbsp;формулы
+            </summary>
+            <div class="welcome-topic-content">
+                <p>В Интеграме доступен широкий набор встроенных функций для работы с данными, вот некоторые из них:</p>
+                <ul>
+                    <li><code>abn_DATE2STR</code> — преобразует дату в строку нужного формата.</li>
+                    <li><code>abn_NUM2STR</code> — переводит число в текст прописью.</li>
+                    <li><code>abn_ID</code> — возвращает идентификатор текущей записи.</li>
+                    <li>Все стандартные MySQL-функции: <code>CONCAT</code>, <code>SUBSTRING</code>, <code>IF</code>, <code>CASE</code> и другие.</li>
+                    <li><strong>Кнопки (тип BUTTON):</strong> кнопки выполняют действия в контексте текущей записи с подстановкой <code>ID</code> и <code>VAL</code>.</li>
+                </ul>
+                <div class="tip">Полный список функций доступен в документации: <a href="https://help.integram.io/" target="_blank">help.integram.io</a>.</div>
+                <div class="topic-links"><span>Документация:</span><a href="https://help.integram.io/#rec220713443" target="_blank"><i class="pi pi-book"></i> Служебные слова и функции</a><a href="https://help.integram.io/#rec220708044" target="_blank"><i class="pi pi-book"></i> Кнопки (тип BUTTON)</a></div>
+            </div>
+        </details>
+
+        <!-- 11. Телеграм-интеграция -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-send topic-icon"></i>
+                Формы с оповещением в&nbsp;Телеграм
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Интеграм позволяет создать единую систему: форма на сайте, данные в базе и мгновенные уведомления в Телеграм:</p>
+                <ol>
+                    <li>Таблица для хранения заявок создаётся с любым набором полей.</li>
+                    <li>HTML-форма настраивается в конструкторе форм под нужный дизайн.</li>
+                    <li>Телеграм-бот подключается для отправки уведомлений о новых заявках.</li>
+                    <li>При создании новой записи бот автоматически отправляет сообщение в указанный чат.</li>
+                </ol>
+                <div class="tip">Это no-code решение: форма на сайте, реляционная база данных и Телеграм-уведомления — без программирования.</div>
+                <div class="topic-links"><span>Видео:</span><a href="https://rutube.ru/video/549098cbb63fb386a1cf1958eaa6bf40/" target="_blank"><i class="pi pi-youtube"></i> Бесплатная форма заявок для сайта за 5 минут</a><span>Статья:</span><a href="https://vc.ru/id568649/1651720-forma-zayavok-na-sait-s-opovesheniem-v-telegram-za-10-minut-no-code" target="_blank"><i class="pi pi-external-link"></i> Форма заявок с оповещением в Телеграм за 10 минут</a></div>
+            </div>
+        </details>
+
+        <!-- 12. Работа с файлами -->
+        <details class="welcome-topic">
+            <summary>
+                <i class="pi pi-folder topic-icon"></i>
+                Управление файлами
+            </summary>
+            <div class="welcome-topic-content">
+                <p>Интеграм имеет встроенную систему управления файлами для полного контроля над содержимым базы:</p>
+                <ul>
+                    <li><strong>Загрузка файлов:</strong> меню «Файлы» открывает доступ к файловой системе базы прямо из браузера.</li>
+                    <li><strong>Шаблоны:</strong> HTML-шаблоны хранятся в папке <code>templates</code> и редактируются через встроенный редактор или локально.</li>
+                    <li><strong>CSS и JS:</strong> стили и скрипты загружаются в соответствующие папки и подключаются к шаблонам.</li>
+                    <li><strong>Включение файлов:</strong> конструкция <code>&lt;!-- File: имя_файла --&gt;</code> позволяет включать один шаблон в другой.</li>
+                </ul>
+                <div class="topic-links"><span>Документация:</span><a href="https://help.integram.io/#rec220710557" target="_blank"><i class="pi pi-book"></i> Пользовательские файлы</a><span>Статья:</span><a href="https://vc.ru/id568649/1810140-kak-redaktirovat-shablon-integrama-lokalno" target="_blank"><i class="pi pi-external-link"></i> Редактирование шаблона Интеграма локально</a></div>
+            </div>
+        </details>
+
+    </div>
+
+    <script>
+    (function() {
+        var searchInput = document.getElementById('welcomeSearch');
+        var clearBtn = document.getElementById('welcomeSearchClear');
+        var emptyMsg = document.getElementById('welcomeSearchEmpty');
+        var topics = document.querySelectorAll('.welcome-topic');
+
+        // Store original HTML of each topic to restore highlights
+        var origSummaries = [];
+        var origContents = [];
+        topics.forEach(function(topic, i) {
+            var summary = topic.querySelector('summary');
+            var content = topic.querySelector('.welcome-topic-content');
+            origSummaries[i] = summary ? summary.innerHTML : '';
+            origContents[i] = content ? content.innerHTML : '';
+        });
+
+        function escapeRegex(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function highlight(html, query) {
+            if (!query) return html;
+            // Work on text nodes only by using a temporary div
+            var tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            highlightNode(tmp, query);
+            return tmp.innerHTML;
+        }
+
+        function highlightNode(node, query) {
+            if (node.nodeType === 3) {
+                var re = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+                if (re.test(node.nodeValue)) {
+                    var span = document.createElement('span');
+                    span.innerHTML = node.nodeValue.replace(re, '<mark class="search-highlight">$1</mark>');
+                    node.parentNode.replaceChild(span, node);
+                }
+            } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+                Array.from(node.childNodes).forEach(function(child) {
+                    highlightNode(child, query);
+                });
+            }
+        }
+
+        function doSearch(query) {
+            var q = query.trim().toLowerCase();
+            var visibleCount = 0;
+
+            topics.forEach(function(topic, i) {
+                var summary = topic.querySelector('summary');
+                var content = topic.querySelector('.welcome-topic-content');
+
+                // Restore original HTML first
+                if (summary) summary.innerHTML = origSummaries[i];
+                if (content) content.innerHTML = origContents[i];
+
+                if (!q) {
+                    topic.classList.remove('search-hidden');
+                    topic.removeAttribute('open');
+                    visibleCount++;
+                    return;
+                }
+
+                var summaryText = summary ? summary.textContent.toLowerCase() : '';
+                var contentText = content ? content.textContent.toLowerCase() : '';
+                var matches = summaryText.indexOf(q) !== -1 || contentText.indexOf(q) !== -1;
+
+                if (matches) {
+                    topic.classList.remove('search-hidden');
+                    topic.setAttribute('open', '');
+                    // Highlight
+                    if (summary) summary.innerHTML = highlight(origSummaries[i], query.trim());
+                    if (content) content.innerHTML = highlight(origContents[i], query.trim());
+                    visibleCount++;
+                } else {
+                    topic.classList.add('search-hidden');
+                    topic.removeAttribute('open');
+                }
+            });
+
+            clearBtn.style.display = q ? 'block' : 'none';
+            emptyMsg.style.display = (q && visibleCount === 0) ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', function() {
+            doSearch(this.value);
+        });
+
+        clearBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            doSearch('');
+            searchInput.focus();
+        });
+
+        // Accordion: close other open topics when one is opened
+        topics.forEach(function(topic) {
+            topic.addEventListener('click', function(e) {
+                if (!topic.open) {
+                    topics.forEach(function(other) {
+                        if (other !== topic && other.open) {
+                            other.removeAttribute('open');
+                        }
+                    });
+                }
+            });
+        });
+    })();
+    </script>
+
+<style>
+/* Tariff Section Styles */
+.tariff-section {
+    /* margin-top: 32px; */
+    padding: 52px 0;
+    border: none !important;
+}
+
+.tariff-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.tariff-header h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.tariff-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 800px;
+    margin: 0 auto 8px;
+}
+
+.tariff-note {
+    background: var(--bg-secondary);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+}
+
+/* Tariff Cards */
+.tariff-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.tariff-card {
+    flex: 1;
+    min-width: 260px;
+    max-width: 320px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.tariff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.tariff-free {
+    border-top: 4px solid #10b981;
+}
+
+.tariff-startup {
+    border-top: 4px solid #3b82f6;
+}
+
+.tariff-scale {
+    border-top: 4px solid #8b5cf6;
+}
+
+.tariff-card-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.tariff-card-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.tariff-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.tariff-price span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.tariff-tokens {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--button-primary);
+    padding: 12px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+}
+
+.tariff-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    background: var(--button-primary);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.tariff-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tariff-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tariff-features li:last-child {
+    border-bottom: none;
+}
+
+.tariff-features i {
+    color: var(--button-primary);
+    font-size: 0.9rem;
+    min-width: 20px;
+}
+
+/* Regression Scale */
+.regression-scale {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 32px;
+	margin-top: 42px;
+	text-align: center;
+}
+
+.regression-scale h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+.regression-scale > p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center; 
+}
+
+.tariff-table {
+    width: 100%;
+	max-width: 633px;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.tariff-table th,
+.tariff-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+.tariff-table th{
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+	padding-right: 48px !important;
+}
+
+.tariff-table th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.tariff-table tr:last-child td {
+    border-bottom: none;
+}
+
+.tariff-table td {
+    color: var(--text-primary);
+}
+
+.table-note {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* Info Block */
+.tariff-info {
+    display: flex;
+    justify-content: center;
+}
+
+.info-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    /* max-width: 500px; */
+}
+
+.info-block i {
+    font-size: 1.5rem;
+    color: var(--button-primary);
+}
+
+.info-block strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.info-block p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tariff-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tariff-card {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .tariff-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .regression-scale {
+        padding: 16px;
+    }
+    
+    .tariff-table th,
+    .tariff-table td {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tariff-table th,
+    .tariff-table td {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+    }
+}
+</style>
+
+<!-- Тарифы и цены -->
+<div class="tariff-section" id="tarif">
+    <div class="tariff-header">
+        <h2>Тарифы на облако</h2>
+        <p>Стоимость сервиса рассчитывается из&nbsp;нагрузки на&nbsp;сервер. Мы используем токены как&nbsp;единицу измерения: <strong>1&nbsp;токен&nbsp;≈&nbsp;одному действию</strong> в&nbsp;системе: открытие таблицы, создание записи, запуск отчета, сохранение формы&nbsp;и&nbsp;т.д.</p>
+        <p class="tariff-note">Тяжеловесные действия (импорт десятков тысяч записей) могут требовать 10–50&nbsp;токенов.</p>
+    </div>
+
+    <div class="tariff-cards">
+        <!-- Знакомство -->
+        <div class="tariff-card tariff-free">
+            <div class="tariff-card-header">
+                <h3>Знакомство</h3>
+                <div class="tariff-price">0 ₽<span>/мес</span></div>
+            </div>
+            <div class="tariff-tokens">3&nbsp;000 токенов</div>
+            <ul class="tariff-features">
+                <li><i class="pi pi-check"></i>Однопользовательский</li>
+                <li><i class="pi pi-clock"></i>2 часа плотной работы каждый рабочий день</li>
+                <li><i class="pi pi-wallet"></i> Бесплатно навсегда</li>
+            </ul>
+        </div>
+
+        <!-- Стартап -->
+        <div class="tariff-card tariff-startup">
+            <div class="tariff-card-header">
+                <h3>Стартап</h3>
+                <div class="tariff-price">1&nbsp;950 ₽<span>/мес</span></div>
+            </div>
+            <div class="tariff-tokens">5&nbsp;000 токенов</div>
+            <ul class="tariff-features">
+                <li><i class="pi pi-users"></i>Многопользовательский</li>
+                <li><i class="pi pi-clock"></i>3–4 часа работы команды из&nbsp;5&nbsp;человек ежедневно</li>
+                <li><i class="pi pi-chart-line"></i>Подходит для 80%&nbsp;клиентов</li>
+            </ul>
+        </div>
+
+        <!-- Масштабируемый -->
+        <div class="tariff-card tariff-scale">
+            <div class="tariff-card-header">
+                <h3>Масштабируемый</h3>
+                <div class="tariff-price">от&nbsp;4&nbsp;900&nbsp;₽<span>/мес</span></div>
+            </div>
+            <div class="tariff-tokens">от&nbsp;10&nbsp;000 токенов</div>
+            <ul class="tariff-features">
+                <li><i class="pi pi-users"></i> Многопользовательский</li>
+                <li><i class="pi pi-chart-line"></i> Регрессионная шкала: каждый следующий пакет на&nbsp;20%&nbsp;дешевле</li>
+                <li><i class="pi pi-exclamation-triangle"></i> При превышении — работа не&nbsp;блокируется</li>
+            </ul>
+        </div>
+    </div>
+
+<!-- Акция: Год за 15900 -->
+<div class="promo-section" id="promoSection">
+    <button class="promo-button" id="promoButton">
+        <span class="promo-price">Год за 15 900 ₽</span>
+    </button>
+    <div class="promo-subtitle">Акция: Тарифный план Стартап за 15&nbsp;900 рублей в год при оплате сейчас</div>
+    
+    <div class="promo-form" id="promoForm" style="display: none;">
+        <div class="promo-form-group">
+            <label for="promoEmail">Email для оплаты</label>
+            <input type="email" id="promoEmail" placeholder="your@email.com" class="promo-input">
+            <div class="promo-error" id="promoError"></div>
+        </div>
+        <button class="promo-pay-button" id="promoPayButton">Оплатить 15 900 ₽</button>
+    </div>
+</div>
+
+<style>
+/* Promo Section Styles */
+.promo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 32px auto 50px;
+    max-width: 600px;
+}
+
+.promo-button {
+    background: #f59e0b;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 12px 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+	max-width: 400px;
+	box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+	margin-bottom: 12px;
+}
+
+.promo-button:hover {
+    background: #f59e0b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.promo-price {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.promo-subtitle {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    text-align: center;
+}
+
+.promo-form {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    width: 100%;
+    margin-top: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+.promo-form-group {
+    /* margin-bottom: 20px; */
+}
+
+.promo-form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.promo-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.promo-input:focus {
+    outline: none;
+    border-color: var(--button-primary);
+}
+
+.promo-input.error {
+    border-color: #ef4444;
+}
+
+.promo-error {
+    font-size: 0.75rem;
+    color: #ef4444;
+    margin-top: 4px;
+    min-height: 20px;
+}
+
+.promo-pay-button {
+    width: 100%;
+    background: var(--button-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.promo-pay-button:hover:not(:disabled) {
+    background: var(--button-primary-dark, #2563eb);
+    transform: translateY(-1px);
+}
+
+.promo-pay-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+<script>
+(function() {
+    const promoButton = document.getElementById('promoButton');
+    const promoForm = document.getElementById('promoForm');
+    const promoEmail = document.getElementById('promoEmail');
+    const promoError = document.getElementById('promoError');
+    const promoPayButton = document.getElementById('promoPayButton');
+    
+    // Валидация email
+    function validateEmail(email) {
+        const re = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Показать ошибку
+    function showError(message) {
+        promoError.textContent = message;
+        promoEmail.classList.add('error');
+    }
+    
+    // Скрыть ошибку
+    function hideError() {
+        promoError.textContent = '';
+        promoEmail.classList.remove('error');
+    }
+    
+    // Обработчик кнопки акции
+    promoButton.addEventListener('click', function() {
+        promoButton.style.display = 'none';
+        promoForm.style.display = 'block';
+    });
+    
+    // Валидация при вводе
+    promoEmail.addEventListener('input', function() {
+        if (promoEmail.value.trim()) {
+            hideError();
+        }
+    });
+    
+    // Обработчик кнопки оплаты
+    promoPayButton.addEventListener('click', function() {
+        const email = promoEmail.value.trim();
+        
+        // Валидация email
+        if (!email) {
+            showError('Введите email');
+            return;
+        }
+        
+        if (!validateEmail(email)) {
+            showError('Введите корректный email (например, name@example.com)');
+            return;
+        }
+        
+        // Делаем кнопку неактивной
+        promoPayButton.disabled = true;
+        promoPayButton.textContent = 'Перенаправление...';
+        
+        // Перенаправляем на страницу оплаты
+        window.location.href = 'https://checkout.tochka.com/13ee6b97-8c8c-4dd6-b1b2-cf0c0abc72dc';
+    });
+})();
+</script>
+	
+    <!-- Условия -->
+    <div class="tariff-info">
+        <div class="info-block">
+            <i class="pi pi-info-circle"></i>
+            <div>
+                <strong>Превышение лимита</strong>
+                <p>При превышении лимита в течение месяца работа не&nbsp;блокируется. В&nbsp;следующем месяце будет предложено перейти на&nbsp;повышенный тариф.</p>
+            </div>
+        </div>
+    </div>
+<style>
+/* Spoiler Title Styles */
+.spoiler-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    border-bottom: 1px dashed var(--button-primary);
+    transition: opacity 0.2s ease;
+}
+
+.spoiler-title:hover {
+    opacity: 0.8;
+}
+
+.spoiler-icon {
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+    color: var(--button-primary);
+}
+
+.spoiler-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.tokens {
+	color: var(--link-color);
+    text-decoration: none;
+}
+</style>
+
+<!-- Регрессионная шкала -->
+<div class="regression-scale">
+    <h3 class="spoiler-title" id="spoilerTitle">
+        <span class="spoiler-icon">▶</span> Масштабируемый тариф — регрессионная шкала
+    </h3>
+    <p>При исчерпании базового пакета (10&nbsp;000 токенов) вы&nbsp;можете приобретать дополнительные пакеты. Каждый следующий пакет дешевле предыдущего на&nbsp;<strong>20%</strong>.</p>
+    <p>10&nbsp;000 токенов — это если 2 человека по 8 часов в день, без выходных в течение месяца будут вбивать карточки клиентов в компьютер.</p>
+	<p><a href="/tokens.html" class="tokens"><i class="pi pi-help"></i> Я ничего не понял. Объясните попроще про токены.</a></p>
+	
+    <div class="spoiler-content" id="spoilerContent" style="display: none;">
+        <div class="table-wrapper">
+            <table class="tariff-table">
+                <thead>
+                    <tr>
+                        <th>Пакет токенов<br />(всего)</th>
+                        <th>Цена пакета,<br />₽</th>
+                        <th>Полная стоимость,<br />₽ в месяц</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1-й пакет (10 000)</td><td class="align-right">4 900</td><td class="align-right">4 900</td></tr>
+                    <tr><td>2-й пакет (20 000)</td><td class="align-right">3 920</td><td class="align-right">8 820</td></tr>
+                    <tr><td>3-й пакет (30 000)</td><td class="align-right">3 140</td><td class="align-right">11 960</td></tr>
+                    <tr><td>4-й пакет (40 000)</td><td class="align-right">2 510</td><td class="align-right">14 470</td></tr>
+                    <tr><td>5-й пакет (50 000)</td><td class="align-right">2 010</td><td class="align-right">16 480</td></tr>
+                    <tr><td>6-й пакет (60 000)</td><td class="align-right">1 610</td><td class="align-right">18 090</td></tr>
+                    <tr><td>7-й пакет (70 000)</td><td class="align-right">1 290</td><td class="align-right">19 380</td></tr>
+                    <tr><td>8-й пакет (80 000)</td><td class="align-right">1 030</td><td class="align-right">20 410</td></tr>
+                    <tr><td>9-й пакет (90 000)</td><td class="align-right">820</td><td class="align-right">21 230</td></tr>
+                    <tr><td>10-й пакет (100 000)</td><td class="align-right">660</td><td class="align-right">21 890</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-note">Цены округлены до&nbsp;10&nbsp;рублей. Последующие пакеты продолжают снижаться по&nbsp;той&nbsp;же логике, стремясь к&nbsp;минимальной стоимости.</p>
+    </div>
+</div>
+
+<script>
+(function() {
+    const spoilerTitle = document.getElementById('spoilerTitle');
+    const spoilerContent = document.getElementById('spoilerContent');
+    const spoilerIcon = spoilerTitle.querySelector('.spoiler-icon');
+    
+    if (spoilerTitle && spoilerContent) {
+        spoilerTitle.addEventListener('click', function() {
+            const isVisible = spoilerContent.style.display !== 'none';
+            
+            if (isVisible) {
+                spoilerContent.style.display = 'none';
+                spoilerIcon.innerHTML = '▶';
+            } else {
+                spoilerContent.style.display = 'block';
+                spoilerIcon.innerHTML = '▼';
+            }
+        });
+    }
+})();
+</script>
+
+</div>
+
+    <div class="welcome-links">
+        <h3>Полезные ресурсы</h3>
+        <a href="https://rutube.ru/channel/41204904/videos/" target="_blank"><i class="pi pi-youtube"></i> RUTUBE-канал</a>
+        <a href="https://help.integram.io/" target="_blank"><i class="pi pi-book"></i> Документация</a>
+        <a href="https://vc.ru/id568649" target="_blank"><i class="pi pi-external-link"></i> Статьи и примеры</a>
+    </div>
+</div>
+    </main>
+
+    <!-- Auth panel: shown when "Войти" is clicked or when navigating to ЛК without token -->
+    <div id="auth-panel" class="auth-container" style="display:none;">
+        <div class="auth-card" style="position:relative;">
+            <!-- Close button as icon in top-right corner -->
+            <button id="close-auth" class="auth-close-btn" aria-label="Закрыть">&#10005;</button>
+
+            <!-- Tab switcher -->
+            <div class="auth-tabs">
+                <button id="tab-login" class="auth-tab auth-tab-active">Вход</button>
+                <button id="tab-register" class="auth-tab">Регистрация</button>
+            </div>
+
+            <!-- Login form -->
+            <div id="login-section">
+                <div id="auth-message" class="error-message" style="display:none;"></div>
+                <form id="login-form">
+                    <!-- DB selector -->
+                    <div class="database-field-group" id="auth-db-group">
+                        <label for="auth-db-select" class="database-field-label">База данных</label>
+                        <select id="auth-db-select" class="auth-db-select database-field-input">
+                            <option value="my">Личный кабинет</option>
+                        </select>
+                        <div id="auth-db-custom-group" style="display:none; margin-top:0.5rem;">
+                            <input type="text" id="auth-db-custom" class="auth-db-custom-input database-field-input" placeholder="Введите имя базы данных" autocomplete="off">
+                            <a href="#" id="auth-db-back" class="auth-db-back-link">&#8592; Вернуться к выбору</a>
+                        </div>
+                    </div>
+                    <div class="database-field-group">
+                        <label for="login-email" class="database-field-label" id="login-email-label">Email / имя пользователя</label>
+                        <input type="text" id="login-email" name="email" required placeholder="your@email.com или имя пользователя" class="database-field-input">
+                    </div>
+                    <div class="database-field-group" id="login-password-group">
+                        <label for="login-password" class="database-field-label">Пароль</label>
+                        <input type="password" id="login-password" name="password" required class="database-field-input">
+                    </div>
+                    <div id="reset-hint" style="display:none; font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.5rem;">Введите имя пользователя или email, мы попробуем найти вашу учетную запись и пришлем новый пароль на вашу почту</div>
+                    <div id="login-captcha-container" class="smart-captcha" data-sitekey="ysc1_2EhhILbwBUoENgVrsbujEEPhih5dgPfh4Rs2WfImcd89ae95" data-robustness="strict" style="margin-bottom:0.5rem;"></div>
+                    <br />
+                    <div style="display:flex; gap:0.5rem; align-items:stretch; margin-top:0.8rem;">
+                        <button type="submit" id="login-submit-btn" class="btn-primary" style="flex:1; justify-content:center;">Войти</button>
+                        <button type="button" id="qr-btn" class="btn-secondary btn-square" title="Войти по QR-коду с телефона" aria-label="Войти по QR-коду"><i class="pi pi-qrcode"></i></button>
+                        <button type="button" id="otp-btn" class="btn-secondary" style="flex:1; justify-content:center;" title="Получить одноразовый пароль на зарегистрированную почту">Код на почту</button>
+                        <button type="button" id="reset-submit-btn" class="btn-primary" style="display:none; flex:1; justify-content:center;">Сбросить пароль</button>
+                    </div>
+                </form>
+                <div id="otp-message" style="display:none; margin-top:0.75rem; padding:0.5rem 0.75rem; border-radius:var(--radius-sm); font-size:0.9rem;"></div>
+                <div id="otp-code-group" class="database-field-group" style="display:none; margin-top:0.75rem;">
+                    <label for="otp-code-input" class="database-field-label">Код из письма</label>
+                    <div class="otp-code-row">
+                        <input type="text" id="otp-code-input" class="database-field-input" placeholder="Введите код" autocomplete="one-time-code">
+                        <button type="button" id="otp-submit-btn" class="btn-primary">Войти по коду</button>
+                    </div>
+                </div>
+                <div id="qr-login-panel" class="qr-login-panel" style="display:none;">
+                    <div class="qr-login-code" id="qr-login-code"></div>
+                    <!-- issue #4677: проверочное число дублируется на телефоне. Совпало —
+                         подтверждать можно; не совпало — вам подсунули чужой код. -->
+                    <div class="qr-login-pair" id="qr-login-pair" style="display:none;">
+                        <span class="qr-login-pair-label">Проверочное число</span>
+                        <span class="qr-login-pair-value" id="qr-login-pair-value"></span>
+                    </div>
+                    <div class="qr-login-hint">Наведите камеру телефона на код и подтвердите вход, сверив проверочное число — эта страница откроется сама.</div>
+                    <div class="qr-login-status" id="qr-login-status"></div>
+                    <button type="button" id="qr-refresh-btn" class="btn-secondary" style="display:none;">Обновить код</button>
+                </div>
+                <div id="reset-message" style="display:none; margin-top:0.75rem; padding:0.5rem 0.75rem; border-radius:var(--radius-sm); font-size:0.9rem;"></div>
+                <div style="text-align:center; margin-top:0.75rem;">
+                    <a href="#" id="reset-link" style="font-size:0.85rem; color:var(--link-color); text-decoration:none;">Сбросить пароль</a>
+                    <a href="#" id="back-to-login-link" style="display:none; font-size:0.85rem; color:var(--link-color); text-decoration:none;">Войти с паролем</a>
+                </div>
+
+                <div id="yandex-divider" class="auth-divider" style="display:none;">или</div>
+                <div class="oauth-buttons-container">
+                    <button type="button" id="yandex-login-btn" class="btn-yandex btn-oauth-compact" style="display:none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.002 0C5.375 0 0 5.375 0 12s5.375 12 12.002 12C18.626 24 24 18.625 24 12S18.626 0 12.002 0zM15.24 16.2h-1.68V8.04h-1.2c-1.637 0-2.52.818-2.52 2.045 0 1.39.597 2.047 1.843 2.87l1.017.676-2.903 4.57H7.92l2.676-3.913C9.08 13.18 8.16 12.11 8.16 10.016c0-2.24 1.554-3.696 4.306-3.696h2.774v9.88z"/>
+                        </svg>
+                        <span class="btn-text">Войти через Яндекс</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Register form -->
+            <div id="register-section" style="display:none;">
+                <form id="register-form">
+                    <div class="database-field-group">
+                        <label for="reg-email" class="database-field-label">Email / имя пользователя</label>
+                        <input type="text" id="reg-email" name="email" required placeholder="your@email.com или имя пользователя" class="database-field-input">
+                    </div>
+                    <div class="database-field-group">
+                        <label for="reg-password" class="database-field-label">Пароль</label>
+                        <input type="password" id="reg-password" name="password" required minlength="6" class="database-field-input">
+                    </div>
+                    <div class="database-field-group">
+                        <label for="reg-confirm-password" class="database-field-label">Подтвердите пароль</label>
+                        <input type="password" id="reg-confirm-password" name="confirm-password" required class="database-field-input">
+                    </div>
+                    <label class="auth-checkbox">
+                        <input type="checkbox" id="reg-agree" name="agree" required>
+                        <span>Я ознакомился с <a href="/terms.html" target="_blank">правилами использования</a></span>
+                    </label>
+                    <div id="register-captcha-container" class="smart-captcha" data-sitekey="ysc1_2EhhILbwBUoENgVrsbujEEPhih5dgPfh4Rs2WfImcd89ae95" data-robustness="strict" style="margin-bottom:0.5rem; margin-top:0.5rem;"></div>
+                    <br />
+                    <button type="submit" class="btn-primary">Зарегистрироваться</button>
+                </form>
+
+                <div id="yandex-reg-divider" class="auth-divider" style="display:none;">или</div>
+                <div class="oauth-buttons-container">
+                    <button type="button" id="yandex-register-btn" class="btn-yandex btn-oauth-compact" style="display:none;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.002 0C5.375 0 0 5.375 0 12s5.375 12 12.002 12C18.626 24 24 18.625 24 12S18.626 0 12.002 0zM15.24 16.2h-1.68V8.04h-1.2c-1.637 0-2.52.818-2.52 2.045 0 1.39.597 2.047 1.843 2.87l1.017.676-2.903 4.57H7.92l2.676-3.913C9.08 13.18 8.16 12.11 8.16 10.016c0-2.24 1.554-3.696 4.306-3.696h2.774v9.88z"/>
+                        </svg>
+                        <span class="btn-text">Войти через Яндекс</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- issue #4671: библиотека лежит в js/, а не в assets/ — update.conf раскладывает
+         `js/*`, а `assets/*` не раскладывает вовсе, и файл на боевой не доезжал:
+         сервер отдавал на него HTML, браузер спотыкался о «<» и window.QRCode не
+         появлялся. Рядом по той же причине лежит js/xlsx0.18.5.full.min.js. -->
+    <script src="js/qrcode.js"></script>
+    <script src="js/app.js"></script>
+
+<style>
+/* Footer Styles */
+.site-footer {
+    margin-top: 48px;
+    padding: 48px 20px 32px;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-brand {
+    gap: 8px;
+}
+
+.footer-logo {
+	height: 72px;
+    width: 129px;
+    margin-bottom: 8px;
+}
+
+.footer-logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .footer-logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .footer-logo-dark {
+    display: block;
+}
+
+.footer-copyright,
+.footer-inn {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-column h4 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--button-primary);
+    text-decoration: underline;
+}
+
+.footer-phone {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary) !important;
+}
+
+.footer-phone:hover {
+    color: var(--button-primary) !important;
+}
+
+.footer-email {
+    font-size: 0.9rem;
+}
+
+.footer-workhours {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--card-bg);
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+    color: #10b981;
+}
+
+.badge-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-text strong {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.badge-text span {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 32px 16px 24px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .footer-column {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-badge {
+        text-align: left;
+    }
+}
+</style>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="https://integram.io/img/logo2.svg" alt="Интеграм" class="footer-logo footer-logo-light">
+            <img src="i/logo_black_bg.jpg" alt="Интеграм" class="footer-logo footer-logo-dark">
+            <p class="footer-copyright">© 2026 АО Интеграм</p>
+            <p class="footer-inn">ИНН: 9716002710</p>
+        </div>
+        
+        <div class="footer-column">
+            <h4>Документы</h4>
+            <ul class="footer-links">
+                <li><a href="/terms.html">Правила использования</a></li>
+                <li><a href="/OfferOJSC.pdf">Публичная оферта</a></li>
+                <li><a href="/acct.html">Платежная информация</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h4>Контакты</h4>
+            <ul class="footer-links">
+                <li><a href="tel:+79955060167" class="footer-phone">+7 (995) 506-01-67</a></li>
+                <li class="footer-workhours">ежедневно с 8:00 до 22:00 (Мск)</li>
+                <li><a href="mailto:care@integram.io" class="footer-email">care@integram.io</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <div class="footer-badge">
+                <span class="badge-icon">✓</span>
+                <div class="badge-text">
+                    <strong>В реестре отечественного ПО</strong>
+                    <span>Реестровая запись №30872</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent">
+        <span style="font-size:0.9rem;">Мы используем куки для обеспечения работы сайта. Продолжая использовать сайт, вы соглашаетесь с их использованием.</span>
+        <button type="button" onclick="cookieAccept()" style="background:#3b82f6; color:#fff; border:none; border-radius:6px; padding:0.5rem 1.25rem; font-size:0.9rem; cursor:pointer; white-space:nowrap;">Принять</button>
+    </div>
+    <script>
+        (function() {
+            if (!localStorage.getItem('cookie_consent')) {
+                document.getElementById('cookie-consent').style.display = 'flex';
+            }
+        })();
+        function cookieAccept() {
+            localStorage.setItem('cookie_consent', '1');
+            document.getElementById('cookie-consent').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

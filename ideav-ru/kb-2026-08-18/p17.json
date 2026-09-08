@@ -1,0 +1,90 @@
+{
+  "url": "https://ideav.ru/knowledge-base/17-smart-google-import.html",
+  "http": 200,
+  "raw": {
+    "bytes": 14896,
+    "words": 332,
+    "h1": [
+      "Умный импорт из Google Sheets: синхронизация по разрезам, а не по координатам ячеек"
+    ],
+    "h2count": 3,
+    "hasForm": false,
+    "hasFileInput": false,
+    "hasTextarea": false,
+    "ogImage": "https://ideav.ru/og/17-smart-google-import.png",
+    "title": "Умный импорт из Google Sheets в Интеграм — База знаний",
+    "jsBundles": [
+      "index-Dx4b-LKo.js",
+      "react-vendor-D57BBaBp.js",
+      "motion-CWae_IBN.js"
+    ],
+    "articleDates": [
+      {
+        "type": "TechArticle",
+        "datePublished": null,
+        "dateModified": "2026-08-18"
+      }
+    ],
+    "linksToAgentPlatforms": 0,
+    "missingNbsp": 25,
+    "phrases": {}
+  },
+  "rendered": {
+    "w1440": {
+      "h1": [
+        "Умный импорт из Google Sheets: синхронизация по разрезам, а не по координатам ячеек"
+      ],
+      "h2count": 8,
+      "words": 1181,
+      "hasForm": false,
+      "hasFileInput": false,
+      "hasTextarea": false,
+      "headerScrollWidth": 1440,
+      "headerClientWidth": 1440,
+      "docScrollWidth": 1440,
+      "docClientWidth": 1440,
+      "slateButton": {
+        "text": "Ещё",
+        "aria": null,
+        "title": null
+      },
+      "namelessButtons": 0,
+      "namelessButtonsSample": [],
+      "navLinks": [
+        " → /",
+        "Технология → /#technology",
+        "Как работаем → /#process",
+        "Примеры → /#cases",
+        "Цены → /#pricing",
+        "Больше CRM → /sravnenie-s-bitrix-amocrm.html",
+        "База знаний → /knowledge-base.html",
+        "Блог → https://ideav.ru/blog/",
+        "Информационная система → /informatsionnaya-sistema.html",
+        "Платформы с ИИ-агентами → /agent-platforms.html",
+        "Решения вместо Excel → /resheniya.html",
+        "Конструктор вместо Excel → /konstruktor-prilozhenij.html",
+        "Excel → приложение → /excel-to-app.html",
+        "Сопоставление каталогов → /catalog-matching.html",
+        "Предпосылки no-code конструктора → https://ideav.ru/blog/posts/predposylki-no-code-konstruktora-integram/",
+        "Начать → https://ideav.ru/start.html",
+        "ПредыдущаяТарифы в токенах вместо оплаты за пользователя → /knowledge-base/16-pricing-policy.html",
+        "Следующая On-premise в реестре Минцифры → /knowledge-base/18-on-premise-procurement.html"
+      ],
+      "linksToAgentPlatforms": 1,
+      "consoleErrors": [],
+      "bodyTextLen": 8712
+    },
+    "w768": {
+      "headerScrollWidth": 768,
+      "headerClientWidth": 768,
+      "docScrollWidth": 768,
+      "docClientWidth": 768,
+      "overflowPx": 0,
+      "h1": [
+        "Умный импорт из Google Sheets: синхронизация по разрезам, а не по координатам ячеек"
+      ]
+    },
+    "phrases": {},
+    "h1RawVsRendered": "СОВПАДАЕТ"
+  }
+}

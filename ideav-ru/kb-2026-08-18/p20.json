@@ -1,0 +1,90 @@
+{
+  "url": "https://ideav.ru/knowledge-base/20-semantic-memory-without-vector-db.html",
+  "http": 200,
+  "raw": {
+    "bytes": 15138,
+    "words": 284,
+    "h1": [
+      "Память по смыслу без отдельной базы: рекурсия и графы в Интеграме"
+    ],
+    "h2count": 3,
+    "hasForm": false,
+    "hasFileInput": false,
+    "hasTextarea": false,
+    "ogImage": "https://ideav.ru/og/20-semantic-memory-without-vector-db.png",
+    "title": "Память по смыслу без векторной БД — Интеграм",
+    "jsBundles": [
+      "index-Dx4b-LKo.js",
+      "react-vendor-D57BBaBp.js",
+      "motion-CWae_IBN.js"
+    ],
+    "articleDates": [
+      {
+        "type": "TechArticle",
+        "datePublished": null,
+        "dateModified": "2026-08-18"
+      }
+    ],
+    "linksToAgentPlatforms": 0,
+    "missingNbsp": 22,
+    "phrases": {}
+  },
+  "rendered": {
+    "w1440": {
+      "h1": [
+        "Память по смыслу без отдельной базы: рекурсия и графы в Интеграме"
+      ],
+      "h2count": 7,
+      "words": 768,
+      "hasForm": false,
+      "hasFileInput": false,
+      "hasTextarea": false,
+      "headerScrollWidth": 1440,
+      "headerClientWidth": 1440,
+      "docScrollWidth": 1440,
+      "docClientWidth": 1440,
+      "slateButton": {
+        "text": "Ещё",
+        "aria": null,
+        "title": null
+      },
+      "namelessButtons": 0,
+      "namelessButtonsSample": [],
+      "navLinks": [
+        " → /",
+        "Технология → /#technology",
+        "Как работаем → /#process",
+        "Примеры → /#cases",
+        "Цены → /#pricing",
+        "Больше CRM → /sravnenie-s-bitrix-amocrm.html",
+        "База знаний → /knowledge-base.html",
+        "Блог → https://ideav.ru/blog/",
+        "Информационная система → /informatsionnaya-sistema.html",
+        "Платформы с ИИ-агентами → /agent-platforms.html",
+        "Решения вместо Excel → /resheniya.html",
+        "Конструктор вместо Excel → /konstruktor-prilozhenij.html",
+        "Excel → приложение → /excel-to-app.html",
+        "Сопоставление каталогов → /catalog-matching.html",
+        "Предпосылки no-code конструктора → https://ideav.ru/blog/posts/predposylki-no-code-konstruktora-integram/",
+        "Начать → https://ideav.ru/start.html",
+        "ПредыдущаяПриложение собирает ИИ-агент → /knowledge-base/19-ai-agent-app-build.html",
+        "Следующая Сопоставление каталогов без Elasticsearch → /knowledge-base/21-catalog-matching.html"
+      ],
+      "linksToAgentPlatforms": 1,
+      "consoleErrors": [],
+      "bodyTextLen": 5630
+    },
+    "w768": {
+      "headerScrollWidth": 768,
+      "headerClientWidth": 768,
+      "docScrollWidth": 768,
+      "docClientWidth": 768,
+      "overflowPx": 0,
+      "h1": [
+        "Память по смыслу без отдельной базы: рекурсия и графы в Интеграме"
+      ]
+    },
+    "phrases": {},
+    "h1RawVsRendered": "СОВПАДАЕТ"
+  }
+}

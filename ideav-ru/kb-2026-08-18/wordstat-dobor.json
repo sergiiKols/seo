@@ -1,0 +1,212 @@
+[
+ {
+  "phrase": "конструктор приложений",
+  "head": 3551,
+  "rows": 129,
+  "cluster_sum": 9009
+ },
+ {
+  "phrase": "конструктор приложений без кода",
+  "head": 59,
+  "rows": 1,
+  "cluster_sum": 59
+ },
+ {
+  "phrase": "конструктор баз данных",
+  "head": 262,
+  "rows": 15,
+  "cluster_sum": 556
+ },
+ {
+  "phrase": "no code платформа",
+  "head": 348,
+  "rows": 6,
+  "cluster_sum": 508
+ },
+ {
+  "phrase": "создать приложение без программиста",
+  "head": 0,
+  "rows": 0,
+  "cluster_sum": 0
+ },
+ {
+  "phrase": "впр excel",
+  "head": 16284,
+  "rows": 200,
+  "cluster_sum": 65068
+ },
+ {
+  "phrase": "функция впр",
+  "head": 15316,
+  "rows": 200,
+  "cluster_sum": 59874
+ },
+ {
+  "phrase": "замена excel",
+  "head": 1199,
+  "rows": 53,
+  "cluster_sum": 2981
+ },
+ {
+  "phrase": "чем заменить excel",
+  "head": 156,
+  "rows": 4,
+  "cluster_sum": 182
+ },
+ {
+  "phrase": "таблица вместо excel",
+  "head": 0,
+  "rows": 7,
+  "cluster_sum": 290
+ },
+ {
+  "phrase": "сопоставление каталогов",
+  "head": 0,
+  "rows": 0,
+  "cluster_sum": 0
+ },
+ {
+  "phrase": "сопоставление номенклатуры",
+  "head": 2738,
+  "rows": 59,
+  "cluster_sum": 7879
+ },
+ {
+  "phrase": "дедупликация справочников",
+  "head": 0,
+  "rows": 0,
+  "cluster_sum": 0
+ },
+ {
+  "phrase": "вайб кодинг",
+  "head": 14907,
+  "rows": 132,
+  "cluster_sum": 20935
+ },
+ {
+  "phrase": "vibe coding",
+  "head": 2342,
+  "rows": 44,
+  "cluster_sum": 5778
+ },
+ {
+  "phrase": "векторная база данных",
+  "head": 0,
+  "rows": 9,
+  "cluster_sum": 748
+ },
+ {
+  "phrase": "семантический поиск по документам",
+  "head": 21,
+  "rows": 1,
+  "cluster_sum": 21
+ },
+ {
+  "phrase": "права доступа в базе данных",
+  "head": 202,
+  "rows": 1,
+  "cluster_sum": 202
+ },
+ {
+  "phrase": "разграничение прав доступа",
+  "head": 850,
+  "rows": 24,
+  "cluster_sum": 2103
+ },
+ {
+  "phrase": "аналог airtable",
+  "head": 0,
+  "rows": 3,
+  "cluster_sum": 115
+ },
+ {
+  "phrase": "российский аналог airtable",
+  "head": 37,
+  "rows": 1,
+  "cluster_sum": 37
+ },
+ {
+  "phrase": "заменить 1с",
+  "head": 0,
+  "rows": 65,
+  "cluster_sum": 4250
+ },
+ {
+  "phrase": "альтернатива 1с",
+  "head": 368,
+  "rows": 9,
+  "cluster_sum": 492
+ },
+ {
+  "phrase": "airtable",
+  "head": 1953,
+  "rows": 20,
+  "cluster_sum": 2499
+ },
+ {
+  "phrase": "airtable альтернатива",
+  "head": 0,
+  "rows": 0,
+  "cluster_sum": 0
+ },
+ {
+  "phrase": "замена airtable",
+  "head": 0,
+  "rows": 0,
+  "cluster_sum": 0
+ },
+ {
+  "phrase": "airtable на русском",
+  "head": 16,
+  "rows": 1,
+  "cluster_sum": 16
+ },
+ {
+  "phrase": "airtable что это",
+  "head": 163,
+  "rows": 3,
+  "cluster_sum": 187
+ },
+ {
+  "phrase": "учет клиентов",
+  "head": 5929,
+  "rows": 104,
+  "cluster_sum": 15039
+ },
+ {
+  "phrase": "внедрение информационной системы",
+  "head": 0,
+  "rows": 123,
+  "cluster_sum": 16790
+ },
+ {
+  "phrase": "система учета данных",
+  "head": 0,
+  "rows": 25,
+  "cluster_sum": 8065
+ },
+ {
+  "phrase": "программа ведения базы данных",
+  "head": 0,
+  "rows": 2,
+  "cluster_sum": 270
+ },
+ {
+  "phrase": "сопоставление товаров",
+  "head": 0,
+  "rows": 7,
+  "cluster_sum": 1380
+ },
+ {
+  "phrase": "сравнение прайс листов",
+  "head": 31,
+  "rows": 1,
+  "cluster_sum": 31
+ },
+ {
+  "phrase": "нормализация справочников",
+  "head": 103,
+  "rows": 2,
+  "cluster_sum": 142
+ }
+]

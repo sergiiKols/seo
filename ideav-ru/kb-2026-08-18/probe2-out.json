@@ -1,0 +1,711 @@
+{
+  "01-google-sheets-150k": {
+    "h1": [
+      "150 000 записей без ручного хаоса: когда Интеграм удобнее Google Sheets"
+    ],
+    "h2": [
+      {
+        "t": "Контекст",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Конкретный сценарий",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Что делает Интеграм иначе",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Ограничения Интеграма в этом сценарии",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Вывод",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Смежные статьи",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      }
+    ],
+    "h3count": 0,
+    "ldBlocks": [
+      {
+        "dataAttr": null,
+        "len": 1493,
+        "types": [
+          "TechArticle",
+          "Organization",
+          "Organization",
+          "ImageObject",
+          "CollectionPage",
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": true,
+        "logo": "https://ideav.ru/logos/integram-og.png"
+      },
+      {
+        "dataAttr": "article",
+        "len": 1174,
+        "types": [
+          "Article",
+          "WebPage",
+          "Collection",
+          "Thing",
+          "Organization",
+          "Organization",
+          "ImageObject"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": "https://ideav.ru/favicon.ico"
+      },
+      {
+        "dataAttr": "breadcrumb",
+        "len": 406,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": null
+      }
+    ],
+    "totalLinks": 42,
+    "articleLinks": [
+      "Все статьи базы знаний → /knowledge-base.html",
+      "Сравнение с Google Sheets, CSV и ручной  → /knowledge-base/17-smart-google-import.html",
+      "Сравнение с Excel и Google SheetsСвязанн → /knowledge-base/04-related-tables.html",
+      "Сравнение с Excel, Google Sheets, просты → /knowledge-base/05-access-rights.html",
+      "Сравнение с Excel и локальные файлыОдна  → /knowledge-base/03-excel-file-versions.html",
+      "Сравнение с NotionРеляционная база вмест → /knowledge-base/07-notion-relational-data.html"
+    ],
+    "externalLinks": [
+      "https://help.integram.io/ rel=noopener noreferrer",
+      "https://integram.io/api.html rel=noopener noreferrer",
+      "https://rutube.ru/channel/41204904/videos/ rel=noopener noreferrer",
+      "https://t.me/qdmadept rel=-"
+    ],
+    "imgs": [
+      {
+        "src": "/og/01-google-sheets-150k.png",
+        "alt": "Обложка статьи: 150 000 записей вместо Google Sheets",
+        "nw": 1200,
+        "cw": 702,
+        "loading": "eager"
+      }
+    ],
+    "canonical": "https://ideav.ru/knowledge-base/01-google-sheets-150k.html",
+    "ogImage": "https://ideav.ru/og/01-google-sheets-150k.png",
+    "title": "150 000 записей вместо Google Sheets — База знаний — Интеграм",
+    "metaDesc": "Google Sheets подходит для совместной таблицы с умеренным объёмом данных, но при 150 000 записей и нескольких ролях превращается в проблему. Интеграм проектировался под такие сценарии: серверная пагинация, права на уровне строк и полей, реляционные связи и готовые отчёты.",
+    "prerenderLeft": false,
+    "lang": "ru",
+    "breadcrumbVisible": false
+  },
+  "08a-vibe-coding-templates": {
+    "h1": [
+      "Вайб-кодинг рабочих мест для Интеграма: как сгенерировать шаблон ИИ и вставить его в main.html"
+    ],
+    "h2": [
+      {
+        "t": "Контекст",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Конкретный сценарий",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Тот же сценарий в Интеграме",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Как шаблон попадает в main.html",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Что делает Интеграм иначе",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Ограничения Интеграма в этом сценарии",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Вывод",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Источники",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Смежные статьи",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      }
+    ],
+    "h3count": 4,
+    "ldBlocks": [
+      {
+        "dataAttr": null,
+        "len": 1549,
+        "types": [
+          "TechArticle",
+          "Organization",
+          "Organization",
+          "ImageObject",
+          "CollectionPage",
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": true,
+        "logo": "https://ideav.ru/logos/integram-og.png"
+      },
+      {
+        "dataAttr": "article",
+        "len": 1442,
+        "types": [
+          "Article",
+          "WebPage",
+          "Collection",
+          "Thing",
+          "Organization",
+          "Organization",
+          "ImageObject"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": "https://ideav.ru/favicon.ico"
+      },
+      {
+        "dataAttr": "breadcrumb",
+        "len": 408,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": null
+      }
+    ],
+    "totalLinks": 47,
+    "articleLinks": [
+      "Все статьи базы знаний → /knowledge-base.html",
+      "ideav/crm#2109 — funnel.html для встраив → https://github.com/ideav/crm/issues/2109",
+      "ideav/crm#2091 — struct.html по образцу  → https://github.com/ideav/crm/issues/2091",
+      "ideav/crm#2061 — табличный компонент и < → https://github.com/ideav/crm/issues/2061",
+      "ideav/crm#2533 — gssync.html, страница н → https://github.com/ideav/crm/issues/2533",
+      "Поиск задач по main.html в ideav/crm → https://github.com/ideav/crm/issues?q=is%3Aissue%20state%3Aclosed%20main.html",
+      "Сравнение с Airtable Interfaces, Notion  → /knowledge-base/08-html-templates.html",
+      "Сравнение с вайб-кодинг (генерация прило → /knowledge-base/11-ai-interface-data-safety.html",
+      "Сравнение с вайб-кодинг и быстрые AI-про → /knowledge-base/12-ai-prototype-rewrite.html",
+      "Сравнение с облачные no-code-сервисы и в → /knowledge-base/15-local-control-files.html"
+    ],
+    "externalLinks": [
+      "https://github.com/ideav/crm/issues/2109 rel=noopener noreferrer",
+      "https://github.com/ideav/crm/issues/2091 rel=noopener noreferrer",
+      "https://github.com/ideav/crm/issues/2061 rel=noopener noreferrer",
+      "https://github.com/ideav/crm/issues/2533 rel=noopener noreferrer",
+      "https://github.com/ideav/crm/issues?q=is%3Aissue%20state%3Aclosed%20main.html rel=noopener noreferrer",
+      "https://help.integram.io/ rel=noopener noreferrer",
+      "https://integram.io/api.html rel=noopener noreferrer",
+      "https://rutube.ru/channel/41204904/videos/ rel=noopener noreferrer",
+      "https://t.me/qdmadept rel=-"
+    ],
+    "imgs": [
+      {
+        "src": "/og/08a-vibe-coding-templates.png",
+        "alt": "Обложка статьи: Вайб-кодинг шаблонов для main.html",
+        "nw": 1200,
+        "cw": 702,
+        "loading": "eager"
+      }
+    ],
+    "canonical": "https://ideav.ru/knowledge-base/08a-vibe-coding-templates.html",
+    "ogImage": "https://ideav.ru/og/08a-vibe-coding-templates.png",
+    "title": "Вайб-кодинг шаблонов для main.html — Интеграм",
+    "metaDesc": "Пошаговая инструкция и готовый промпт, чтобы сгенерировать ИИ HTML-шаблон рабочего места для встраивания в main.html Интеграма: правила вставки, плейсхолдеры {ИмяПоля}, повторяющиеся блоки и реальные примеры из ideav/crm.",
+    "prerenderLeft": false,
+    "lang": "ru",
+    "breadcrumbVisible": false
+  },
+  "14b-dashboards": {
+    "h1": [
+      "Дашборды на тех же данных: чем Интеграм удобнее связки таблицы и внешнего BI"
+    ],
+    "h2": [
+      {
+        "t": "Контекст",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Конкретный сценарий",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Что делает Интеграм иначе",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Ограничения Интеграма в этом сценарии",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Вывод",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Смежные статьи",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      }
+    ],
+    "h3count": 0,
+    "ldBlocks": [
+      {
+        "dataAttr": null,
+        "len": 1465,
+        "types": [
+          "TechArticle",
+          "Organization",
+          "Organization",
+          "ImageObject",
+          "CollectionPage",
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": true,
+        "logo": "https://ideav.ru/logos/integram-og.png"
+      },
+      {
+        "dataAttr": "article",
+        "len": 1206,
+        "types": [
+          "Article",
+          "WebPage",
+          "Collection",
+          "Thing",
+          "Organization",
+          "Organization",
+          "ImageObject"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": "https://ideav.ru/favicon.ico"
+      },
+      {
+        "dataAttr": "breadcrumb",
+        "len": 388,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": null
+      }
+    ],
+    "totalLinks": 42,
+    "articleLinks": [
+      "Все статьи базы знаний → /knowledge-base.html",
+      "Сравнение с Google Forms + Google Sheets → /knowledge-base/14-forms.html",
+      "Сравнение с Google Sheets + Looker Studi → /knowledge-base/14a-reports.html",
+      "Сравнение с Excel, Google Sheets, Notion → /knowledge-base/13-api-json-export.html",
+      "Сравнение с Excel, Google Sheets, просты → /knowledge-base/05-access-rights.html"
+    ],
+    "externalLinks": [
+      "https://help.integram.io/ rel=noopener noreferrer",
+      "https://integram.io/api.html rel=noopener noreferrer",
+      "https://rutube.ru/channel/41204904/videos/ rel=noopener noreferrer",
+      "https://t.me/qdmadept rel=-"
+    ],
+    "imgs": [
+      {
+        "src": "/og/14b-dashboards.png",
+        "alt": "Обложка статьи: Дашборды на тех же данных",
+        "nw": 1200,
+        "cw": 702,
+        "loading": "eager"
+      }
+    ],
+    "canonical": "https://ideav.ru/knowledge-base/14b-dashboards.html",
+    "ogImage": "https://ideav.ru/og/14b-dashboards.png",
+    "title": "Дашборды на тех же данных без отдельного BI-кэша — Интеграм",
+    "metaDesc": "Как дашборды Интеграма строятся на тех же отчётах: общий фильтр периода, KPI, графики, сводные таблицы и инлайн-правка без отдельного BI-слоя.",
+    "prerenderLeft": false,
+    "lang": "ru",
+    "breadcrumbVisible": false
+  },
+  "19-ai-agent-app-build": {
+    "h1": [
+      "Приложение собирает ИИ-агент: чем подход Интеграма отличается от программистов и готовых коробок"
+    ],
+    "h2": [
+      {
+        "t": "Контекст",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Конкретный сценарий",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Тот же сценарий в Интеграме",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Что делает Интеграм иначе",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Ограничения Интеграма в этом сценарии",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Вывод",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Источники",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Смежные статьи",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      }
+    ],
+    "h3count": 0,
+    "ldBlocks": [
+      {
+        "dataAttr": null,
+        "len": 1507,
+        "types": [
+          "TechArticle",
+          "Organization",
+          "Organization",
+          "ImageObject",
+          "CollectionPage",
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": true,
+        "logo": "https://ideav.ru/logos/integram-og.png"
+      },
+      {
+        "dataAttr": "article",
+        "len": 1432,
+        "types": [
+          "Article",
+          "WebPage",
+          "Collection",
+          "Thing",
+          "Organization",
+          "Organization",
+          "ImageObject"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": "https://ideav.ru/favicon.ico"
+      },
+      {
+        "dataAttr": "breadcrumb",
+        "len": 398,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": null
+      }
+    ],
+    "totalLinks": 43,
+    "articleLinks": [
+      "Все статьи базы знаний → /knowledge-base.html",
+      "Рабочий регламент ИИ-агента integram-app → https://github.com/ideav/crm/blob/main/docs/integram-app-workflow.md",
+      "Сравнение с заказная разработкаПрототип  → /knowledge-base/09-custom-development-prototype.html",
+      "Сравнение с вайб-кодинг и быстрые AI-про → /knowledge-base/12-ai-prototype-rewrite.html",
+      "Сравнение с вайб-кодинг (генерация прило → /knowledge-base/11-ai-interface-data-safety.html",
+      "Сравнение с заказная разработкаИзменения → /knowledge-base/10-no-release-changes.html"
+    ],
+    "externalLinks": [
+      "https://github.com/ideav/crm/blob/main/docs/integram-app-workflow.md rel=noopener noreferrer",
+      "https://help.integram.io/ rel=noopener noreferrer",
+      "https://integram.io/api.html rel=noopener noreferrer",
+      "https://rutube.ru/channel/41204904/videos/ rel=noopener noreferrer",
+      "https://t.me/qdmadept rel=-"
+    ],
+    "imgs": [
+      {
+        "src": "/og/19-ai-agent-app-build.png",
+        "alt": "Обложка статьи: Приложение собирает ИИ-агент",
+        "nw": 1200,
+        "cw": 702,
+        "loading": "eager"
+      }
+    ],
+    "canonical": "https://ideav.ru/knowledge-base/19-ai-agent-app-build.html",
+    "ogImage": "https://ideav.ru/og/19-ai-agent-app-build.png",
+    "title": "Приложение собирает ИИ-агент — Интеграм",
+    "metaDesc": "Три способа получить бизнес-приложение: заказная разработка, готовая SaaS-коробка и Интеграм с ИИ-агентом. Кто принимает проектные решения, сколько готово после первой итерации и почему агент не перекладывает выбор экранов, ролей и названий на заказчика.",
+    "prerenderLeft": false,
+    "lang": "ru",
+    "breadcrumbVisible": false
+  },
+  "24-pure-business-design": {
+    "h1": [
+      "Pure Business Design: приложение по описанию задачи, без блоков и кубиков"
+    ],
+    "h2": [
+      {
+        "t": "Контекст",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Конкретный сценарий",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Тот же сценарий в Интеграме",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Что делает Интеграм иначе",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Ограничения Интеграма в этом сценарии",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Вывод",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Источники",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      },
+      {
+        "t": "Смежные статьи",
+        "fs": "12px",
+        "w": "900",
+        "tt": "uppercase",
+        "color": "oklch(0.704 0.04 256.788)"
+      }
+    ],
+    "h3count": 0,
+    "ldBlocks": [
+      {
+        "dataAttr": null,
+        "len": 1502,
+        "types": [
+          "TechArticle",
+          "Organization",
+          "Organization",
+          "ImageObject",
+          "CollectionPage",
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": true,
+        "logo": "https://ideav.ru/logos/integram-og.png"
+      },
+      {
+        "dataAttr": "article",
+        "len": 1532,
+        "types": [
+          "Article",
+          "WebPage",
+          "Collection",
+          "Thing",
+          "Organization",
+          "Organization",
+          "ImageObject"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": "https://ideav.ru/favicon.ico"
+      },
+      {
+        "dataAttr": "breadcrumb",
+        "len": 392,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "ListItem",
+          "ListItem"
+        ],
+        "hasDatePub": false,
+        "hasDateMod": false,
+        "logo": null
+      }
+    ],
+    "totalLinks": 42,
+    "articleLinks": [
+      "Все статьи базы знаний → /knowledge-base.html",
+      "TAdviser: Интеграм AI-платформа для созд → https://www.tadviser.ru/index.php/Продукт:Интеграм_AI-платформа_для_создания_веб-приложений",
+      "Сравнение с заказная разработка и готовы → /knowledge-base/19-ai-agent-app-build.html",
+      "Сравнение с Заказная разработка и коробо → /knowledge-base/22-information-system-constructor.html",
+      "Сравнение с вайб-кодинг и быстрые AI-про → /knowledge-base/12-ai-prototype-rewrite.html",
+      "Сравнение с вайб-кодинг рабочих мест и р → /knowledge-base/08a-vibe-coding-templates.html"
+    ],
+    "externalLinks": [
+      "https://www.tadviser.ru/index.php/Продукт:Интеграм_AI-платформа_для_создания_веб-приложений rel=noopener noreferrer",
+      "https://help.integram.io/ rel=noopener noreferrer",
+      "https://integram.io/api.html rel=noopener noreferrer",
+      "https://rutube.ru/channel/41204904/videos/ rel=noopener noreferrer",
+      "https://t.me/qdmadept rel=-"
+    ],
+    "imgs": [
+      {
+        "src": "/og/24-pure-business-design.png",
+        "alt": "Обложка статьи: Pure Business Design",
+        "nw": 1200,
+        "cw": 702,
+        "loading": "eager"
+      }
+    ],
+    "canonical": "https://ideav.ru/knowledge-base/24-pure-business-design.html",
+    "ogImage": "https://ideav.ru/og/24-pure-business-design.png",
+    "title": "Pure Business Design — приложение по описанию задачи",
+    "metaDesc": "Pure Business Design: пользователь описывает задачу текстом и думает только о логике своего дела, а структуру базы, связи, роли, меню и интерфейс проектирует ИИ-агент. Чем это отличается от визуальных конструкторов и от ИИ-ассистентов, которым нужен человек на каждой итерации.",
+    "prerenderLeft": false,
+    "lang": "ru",
+    "breadcrumbVisible": false
+  }
+}

@@ -1,0 +1,10 @@
+import { chromium } from '/root/dizain/.claude/skills/screen-audit/scripts/node_modules/playwright/index.mjs';
+const b = await chromium.launch({executablePath:'/root/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome',args:['--no-sandbox']});
+const p = await b.newPage({viewport:{width:1440,height:900}});
+await p.goto('https://ideav.ru/knowledge-base/13-api-json-export.html',{waitUntil:'networkidle',timeout:120000});
+await p.waitForTimeout(2500);
+const t = await p.evaluate(()=>document.body.innerText);
+console.log(t);
+console.log('=====H2/H3=====');
+console.log(await p.evaluate(()=>[...document.querySelectorAll('h2,h3')].map(e=>e.tagName+': '+e.innerText).join('\n')));
+await b.close();
