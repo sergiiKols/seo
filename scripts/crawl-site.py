@@ -151,6 +151,13 @@ class SEOHtmlParser(HTMLParser):
         if not data:
             return
 
+        # Буфер JSON-LD наполнялся только здесь; без этой строки скрипты
+        # ld+json всегда давали пустой буфер и audit рапортовал
+        # «json-ld-отсутствует» (ложное срабатывание, найдено 11.09.2026
+        # на предпросмотре arenavladimir.ru).
+        if self.in_json_ld:
+            self.json_ld_buffer += data
+
         if self._in_title:
             self.title += data
 
