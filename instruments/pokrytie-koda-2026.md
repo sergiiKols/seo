@@ -1,0 +1,1 @@
+/root/proverki/instruments/proverki-01-pokrytie-koda-neitrino.md

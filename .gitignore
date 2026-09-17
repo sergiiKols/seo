@@ -4,3 +4,6 @@ __pycache__/
 node_modules/
 *.log
 *.db
+
+# Ссылка на источник: оригинал живёт в /root/vhod (правило 8)
+текст ролик AI .txt
